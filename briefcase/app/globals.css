@@ -7,13 +7,15 @@ html, body{
   background:#1f1934;
 }
 main{
-  background:#393a47;
+  background:#8fcdd2;
   height: 100vh;
   height: 100dvh;
 
 }
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+

@@ -1,4 +1,4 @@
-import { BookText, CodeSquare, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech } from "lucide-react";
+import { FolderGit2, Brain,Mails, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech } from "lucide-react";
 
 export const socialNetworks = [
     {
@@ -44,22 +44,23 @@ export const itemsNavbar = [
     },
     {
         id: 3,
-        title: "Book",
-        icon: <BookText size={25} color="#fff" strokeWidth={1} />,
+        title: "Proyectos",
+        icon: <FolderGit2 size={25} color="#fff" strokeWidth={1} />,
         link: "/services",
-    },
-    {
+      },
+      {
         id: 4,
-        title: "Target",
-        icon: <CodeSquare size={25} color="#fff" strokeWidth={1} />,
+        title: "Habilidades",
+        icon: <Brain size={25} color="#fff" strokeWidth={1} />,
         link: "/portfolio",
-    },
-    {
+      },
+      {
         id: 5,
-        title: "Home",
-        icon: <Speech size={25} color="#fff" strokeWidth={1} />,
+        title: "Contacto",
+        icon: <Mails size={25} color="#fff" strokeWidth={1} />,
         link: "/testimonials",
-    },
+      },
+    
 ];
 
 export const dataAboutPage = [
