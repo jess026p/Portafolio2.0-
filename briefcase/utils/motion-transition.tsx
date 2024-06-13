@@ -1,15 +1,15 @@
 export const transitionVariantsPage = {
     initial: {
         x: "100%",
-        y: "100%" // Cambio "with" por "y"
+        width: "100%" 
     },
     animate: {
         x: '0%',
-        y: '0%' // Cambio "with" por "y"
+        width: '0%' 
     },
     exit: {
         x: ['0%', '100%'],
-        y: ['0%', '100%'], // Cambio "with" por "y"
+        width : ['0%', '100%'], 
     }
 }
 
@@ -27,9 +27,9 @@ export const fadeIn = (position: string) => {
             }
         },
         hidden: {
-            y: position === 'bottom' ? -80 : 0, // Cambio "botom" por "bottom"
+            y: position === 'bottom' ? -80 : 0, //  "bottom"
             x: position === 'right' ? 80 : 0,
-            opacity: 1, // No cambió aquí, pero verifica si debería ser 0
+            opacity: 0, 
             transition: {
                 type: "tween",
                 duration: 1.4,

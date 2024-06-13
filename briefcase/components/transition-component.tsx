@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 interface MotionTransitionProps {
     children: React.ReactNode
     position: 'right' | 'bottom'
-    className: string
+    className?: string
 }
 const MotionTransition = (props:MotionTransitionProps)=> {
     const { children, position,className } = props
