@@ -1,3 +1,4 @@
+"use client"
 export const transitionVariantsPage = {
     initial: {
         x: "100%",

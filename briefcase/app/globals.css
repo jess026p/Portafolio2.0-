@@ -6,6 +6,7 @@ html, body{
   color:#fff;
   background:#1f1934;
   background:#64598a;
+  
 }
 main{
   background:#8fcdd2;
@@ -13,6 +14,29 @@ main{
   height: 100dvh;
 
 }
+.card-size {
+  width: 30rem; /* 96 / 4 = 24 rem, assuming 1 rem = 16px */
+  height: 22rem; /* 56 / 4 = 14 rem */
+  overflow-wrap: break-word; /* Permite que el texto se envuelva dentro de las tarjetas */ /* Otra propiedad para permitir el ajuste de palabras */
+  word-break: break-all; /* Romper palabras largas para ajustarse */
+  white-space: normal;
+
+}
+.carousel-container {
+  overflow-x: auto; /* Agrega scroll horizontal */
+  white-space: nowrap; /* Mantiene los elementos en una línea */
+}
+
+.carousel-scroll {
+  display: inline-flex; /* Permite que los elementos se muestren en línea */
+  gap: 20px; /* Espacio entre las tarjetas */
+  
+}
+
+/* Estilos para las tarjetas si es necesario */
+
+
+
 
 @layer utilities {
   .text-balance {
