@@ -19,7 +19,7 @@ const AboutMePage = () => {
           soy Yo?
         </span>
       </h1>
-      <div className="mt-2 px-20">
+      <div className="text-2xl leading-tight text-center md:text-left md:text-5xl px-20">
         <a
           href="../CV Jessica.pdf"
           className="bg-blue-500 text-white px-3 py-1 rounded inline-block mt-3 hover:bg-blue-600 text-sm"

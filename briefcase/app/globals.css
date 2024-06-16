@@ -32,6 +32,21 @@ main{
   gap: 20px; /* Espacio entre las tarjetas */
   
 }
+@media (max-width: 396px) {
+  .carousel-container {
+    overflow-y: auto; /* Agrega scroll vertical */
+    overflow-x: hidden; /* Elimina scroll horizontal */
+    white-space: normal; /* Permite que los elementos se envuelvan */
+  }
+
+  .carousel-scroll {
+    display: flex;
+    flex-direction: column; /* Muestra los elementos en una columna */
+    gap: 20px; /* Espacio entre las tarjetas */
+    
+  }
+}
+
 
 /* Estilos para las tarjetas si es necesario */
 

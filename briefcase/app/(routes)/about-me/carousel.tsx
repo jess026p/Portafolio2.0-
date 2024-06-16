@@ -1,10 +1,13 @@
-import React from 'react';
+
+import React, { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faMapMarkerAlt, faLink, faMountain, faUtensils, faMusic, faWind } from '@fortawesome/free-solid-svg-icons';
+
 
 const ProfileCard = () => (
   <div className="bg-darkBg p-4 shadow-md rounded-lg mx-2 card-size my-4 ">
-    <div className="flex items-center animate-pulse space-x-4">
+     <div className="flex items-center animate-pulse space-x-4">
       <img src="../perfil.jpeg" alt="Perfil" className="w-20 h-20 rounded-full mr-4" />
       <div>
         <h2 className="text-xl font-semibold mb-2 text-white">Jessica Tituaña</h2>
@@ -24,7 +27,7 @@ const ProfileCard = () => (
 const HobbyCard = () => (
   <div className="bg-darkBg p-4 shadow-md rounded-lg mx-2 card-size my-4">
     <div  className="animate-pulse ">
-    <h2 className="text-xl font-semibold mb-2 text-white rounded-t-lg p-5">Mis Hobbies</h2>
+    <h2 className="text-xl font-semibold mb-2 text-white rounded-t-lg p-3">Mis Hobbies</h2>
     <div className="flex flex-wrap items-center">
       <ul>
       <div className="mb-4 flex items-center">
@@ -46,7 +49,7 @@ const HobbyCard = () => (
       </ul>
     </div>
     </div>
-  </div>
+    </div>
 );
 
 const PublicationCard = () => (
@@ -73,8 +76,6 @@ const PublicationCard = () => (
     </div>
   </div>
 );
-
-
 
 const CourseCard = () => (
   <div className="bg-darkBg p-4 shadow-md card-size rounded-lg mx-2 my-4 w-30rem">
@@ -104,12 +105,11 @@ const CourseCard = () => (
     </ul>
   </div>
 );
-
-
+// Otros componentes como PublicationCard y CourseCard se mantienen iguales
 
 const Carousel = () => (
   <div className="carousel-container">
-    <div className="carousel-scroll  relative" >
+    <div className="carousel-scroll " >
       <ProfileCard />
       <HobbyCard />
       <PublicationCard />
