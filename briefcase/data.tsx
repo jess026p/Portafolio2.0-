@@ -1,5 +1,5 @@
-import { UserRoundCog,Github,FolderGit2, Brain,Mails, HomeIcon, UserRound, Linkedin, Instagram, Crop, Pencil, Computer, Book, Rocket, Speech } from "lucide-react";
- 
+import { UserRoundCog,Github,FolderGit2, Brain,Mails, HomeIcon, UserRound, Linkedin, Instagram, Hammer, Pencil, Computer, Cuboid, MonitorPause , Speech } from "lucide-react";
+
 export const socialNetworks = [
     {
         id: 1,
@@ -36,7 +36,7 @@ export const itemsNavbar = [
     {
         id: 3,
         title: "Experiencia",
-        icon: <UserRoundCog  color="#fff" strokeWidth={1} />,
+        icon: <MonitorPause   color="#fff" strokeWidth={1} />,
         link: "/experiencia",
       },
     {
@@ -123,32 +123,29 @@ export const dataCounter = [
 ];
 
 export const serviceData = [
-    {
-        icon: <Crop />,
-        title: "Branding",
-        description: "Desarrollo de una identidad de marca sólida y coherente, incluyendo diseño de logotipo, colores y elementos visuales",
-    },
+ 
     {
         icon: <Pencil />,
-        title: "Diseño web",
-        description: "Diseño creativo y profesional de interfaces web intuitivas y atractivas, centradas en la experiencia del usuario",
+        title: "Diseño web-movil",
+        description: "Diseño creativo y profesional de interfaces web intuitivas y atractivas",
     },
     {
         icon: <Computer />,
-        title: "Desarrollo web",
-        description: "Diseño y desarrollo de sitios web a medida, adaptados a tus necesidades",
+        title: "Mantenimiento PCs",
+        description: " Limpieza y Formateo de computadoras e instalación de programas",
     },
     {
-        icon: <Book />,
-        title: "Copywriting",
-        description: "Creación de contenido persuasivo y atractivo que capta la atención de tu audiencia",
+        icon: <Hammer />,
+        title: "Soporte Tecnico",
+        description: "Brindar asistencia técnica a usuarios ",
     },
     {
-        icon: <Rocket />,
-        title: "SEO",
-        description: "Optimización de tu presencia en línea mediante estrategias de SEO avanzadas, ",
+        icon: <Cuboid />,
+        title: "Pruebas de Caja Negra",
+        description: "Verificar que el sistema funciona como espera el usuario final ",
     },
 ];
+
 
 export const dataPortfolio = [
     {
