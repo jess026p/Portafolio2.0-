@@ -2,6 +2,9 @@
 import React from 'react';
 import { FaAngular, FaLaravel, FaNodeJs } from 'react-icons/fa';
 import { FaPhp, FaBootstrap, FaHtml5, FaJs } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
+
 const CardList: React.FC = () => {
   return (
     <div className="flex flex-col gap-4 ">
@@ -43,7 +46,7 @@ const CardList: React.FC = () => {
         <div className="textCC p-2 flex flex-col justify-center items-center md:flex-grow text-center">
           <h3 className="text-sm md:text-base font-bold mb-1">Whatsapp  web</h3>
           <p className="text-xs md:text-sm text-gray-600 mb-1">
-          WhatsApp es una aplicación de mensajería instantánea con llamadas de audio y vídeo. También cuenta con cifrado de mensajes, manteniendo segura la información de nuestros usuarios.</p>
+            WhatsApp es una aplicación de mensajería instantánea con llamadas de audio y vídeo. También cuenta con cifrado de mensajes, manteniendo segura la información de nuestros usuarios.</p>
           <div className="flex gap-1 mb-1 justify-center">
             <FaPhp className="text-violet-700" />
             <FaLaravel className="text-pink-600" />
@@ -71,21 +74,33 @@ const CardList: React.FC = () => {
         <div className="textCC p-2 flex flex-col justify-center items-center md:flex-grow text-center">
           <h3 className="text-sm md:text-base font-bold mb-1">Simulador de Credito e Inversiones</h3>
           <p className="text-xs md:text-sm text-gray-600 mb-1">
-          Este sistema calcula las cuotas y rentabilidad del crédito o inversión según el método alemán o francés, también cuenta con administración de perfiles de usuarios para empresas, además de configurar el tipo de crédito y agregar cargos indirectos al crédito. </p>
+            Este sistema calcula las cuotas y rentabilidad del crédito o inversión según el método alemán o francés, también cuenta con administración de perfiles de usuarios para empresas, además de configurar el tipo de crédito y agregar cargos indirectos al crédito. </p>
           <div className="flex gap-1 mb-1 justify-center">
             <FaPhp className="text-violet-700" />
             <FaBootstrap className="text-blue-300" />
-            <FaHtml5 className="text-red-300"/>
+            <FaHtml5 className="text-red-300" />
             <FaJs className="text-yellow-600" />
           </div>
-          <a
-            href="https://github.com/jess026p/FacturacionElectronica2.0"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-1.5 py-0.5 rounded-md transition-colors duration-300 text-xs"
-          >
-            Visitar GitHub
-          </a>
+          <div className="flex flex-row gap-2 ml-10">
+            <a
+              href="https://github.com/jeanpgr/simulador-creditos-inversiones"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-1.5 py-0.5 rounded-md transition-colors duration-300 text-xs"
+            >
+              Visitar GitHub
+            </a>
+            <a
+              href="../manual.pdf"
+              className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-1.5 py-0.5 rounded-md transition-colors duration-300 text-xs"
+              download="ManuaDeUsuario_Simulador.pdf"
+            >
+              <FontAwesomeIcon icon={faDownload} className="mr-2" />
+              Manual
+            </a>
+          </div>
+
+
         </div>
       </div>
     </div>
