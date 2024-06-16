@@ -15,8 +15,8 @@ main{
 
 }
 .card-size {
-  width: 30rem; /* 96 / 4 = 24 rem, assuming 1 rem = 16px */
-  height: 22rem; /* 56 / 4 = 14 rem */
+  width: 20rem; /* 96 / 4 = 24 rem, assuming 1 rem = 16px */
+  height: 20rem; /* 56 / 4 = 14 rem */
   overflow-wrap: break-word; /* Permite que el texto se envuelva dentro de las tarjetas */ /* Otra propiedad para permitir el ajuste de palabras */
   word-break: break-all; /* Romper palabras largas para ajustarse */
   white-space: normal;

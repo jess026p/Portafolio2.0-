@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faLink, faMountain, faUtensils, faMusic, faWind } from '@fortawesome/free-solid-svg-icons';
 
 const ProfileCard = () => (
-  <div className="bg-darkBg p-4 shadow-md rounded-lg mx-2 card-size my-4">
+  <div className="bg-darkBg p-4 shadow-md rounded-lg mx-2 card-size my-4 ">
     <div className="flex items-center animate-pulse space-x-4">
-      <img src="../perfil.jpeg" alt="Profile" className="w-20 h-20 rounded-full mr-4" />
+      <img src="../perfil.jpeg" alt="Perfil" className="w-20 h-20 rounded-full mr-4" />
       <div>
         <h2 className="text-xl font-semibold mb-2 text-white">Jessica Tituaña</h2>
         <p className="text-white mb-2">Ingeniera en Software</p>
@@ -15,8 +15,9 @@ const ProfileCard = () => (
         </div>
       </div>
     </div>
-    <p className="text-white mt-4 text-justify">Hello, my name is Jessica Tituaña, originally from the city Santiago of Pillaro, graduated in Software Engineering from the Technical University of Ambato. I have experience in areas such as web and mobile development, with a vision committed to continuous learning and constant improvement in my professional field.</p>
-  
+    <p className="text-white mt-5 break-normal text-sm">
+  Hola, mi nombre es Jessica Tituaña, originaria de la ciudad de Santiago de Píllaro, graduada de Ingeniera en Software, en la Universidad Técnica de Ambato. Tengo experiencia en áreas como desarrollo web y móvil, con una visión comprometida con el aprendizaje continuo y la mejora constante en mi campo profesional.
+</p>
   </div>
 );
 
@@ -49,57 +50,70 @@ const HobbyCard = () => (
 );
 
 const PublicationCard = () => (
-  <div className="bg-darkBg p-4 shadow-md rounded-lg mx-2 card-size my-4">
-    <div className="bg-gray-900 text-white text-center rounded-t-lg p-2">
-      <p className="text-2xl text-lg font-semibold">Publicaciones Cientificas</p>
-      <h2 className="text-2xl font-bold">Ciencia Latina</h2>
-      <h3 className="text-lg font-semibold mb-2 text-center sm:text-sm">Tema: Análisis de frameworks frontend para aplicar UX/UI en desarrollo web: una revisión sistemática</h3>
-   </div>
-    <div className="flex items-center mt-4">
-      <img src="../CCL.png" alt="Imagen de la Publicación" className="w-1/3 h-auto rounded-lg mr-4" />
-      <div className="flex-1">
-        <p className="mb-2 sm:text-sm">This article presents a comprehensive analysis of several popular frameworks, evaluating their features, advantages, and disadvantages in terms of user experience (UX) and user interface (UI)</p>
-        <a href="/ruta" className="bg-blue-500 text-white px-2 py-1 rounded flex items-center justify-center hover:bg-blue-600 w-24 text-sm  ">
-          Visitar <FontAwesomeIcon icon={faLink} className="ml-1" />
-        </a>
+  <div className="bg-darkBg p-4 shadow-md rounded-lg mx-2 card-size my-4 relative">  
+
+    <div >
+      {/* Ícono circular en la esquina superior derecha */}
+    <a href="/ruta" className="animate-pulse absolute top-0 right-0 bg-blue-500 text-white rounded-full px-2 py-1 hover:bg-blue-600">
+      <FontAwesomeIcon icon={faLink} />
+    </a>
+      <div className="bg-gray-900 text-white text-center rounded-t-lg p-2">
+        <p className="text-lg font-semibold">Publicaciones Científicas</p>
+        <h2 className="text-lg font-bold">Ciencia Latina</h2>
+        <h3 className="text-base font-semibold mb-2 text-center sm:text-sm break-normal">Tema: Análisis de frameworks frontend para aplicar UX/UI en desarrollo web: una revisión sistemática</h3>
       </div>
+      <div className="flex items-center mt-1 ">
+  {/* La clase 'hidden sm:block' oculta la imagen en dispositivos móviles */}
+  <img src="../CCL.png" alt="Imagen de la Publicación" className="w-1/3 md:w-1/3 sm:w-1/3 h-auto rounded-lg mr-2 hidden sm:block" />
+  <div className="flex-1 ml-2">
+    <p className="mb-1 sm:text-xs break-normal">Análisis exhaustivo de varios frameworks populares, evaluando sus características, ventajas y desventajas en términos de experiencia de usuario (UX) e interfaz de usuario (UI).</p>
+  </div>
+</div>
+
     </div>
   </div>
 );
+
+
 
 const CourseCard = () => (
-  <div className="bg-white p-4 shadow-md rounded-lg mx-2 card-size my-4">
-    <h2 className="text-xl font-semibold mb-2 text-darkBg">Cursos</h2>
+  <div className="bg-darkBg p-4 shadow-md card-size rounded-lg mx-2 my-4 w-30rem">
+    <h2 className="text-lg font-bold mb-2 text-center mt-3">Cursos</h2>
+    <ul className="divide-y divide-gray-300  ">
+      {/* Curso 1 */}
+      <li className="flex items-center py-2">
+        <img src="../py1.png" alt="Nombre del Curso 1" className="w-1/4 h-auto rounded-full mr-2" />
+        <a href="https://www.credly.com/badges/9807c9e6-9961-4f79-a2d1-ed3f3ba3c18f/print">
+          <p className="card-text text-white text-xs animate-pulse">1. Python_Essentials_1<FontAwesomeIcon icon={faLink} className="ml-1" /></p>
+        </a>
+      </li>
+      {/* Curso 2 */}
+      <li className="flex items-center py-2">
+        <img src="../py2.png" alt="Nombre del Curso 2" className="w-1/4 h-auto rounded-full mr-2" />
+        <a href="https://www.credly.com/badges/14019e22-014b-42dd-94a8-e67bf1aa5a45/print">
+          <p className="card-text text-white text-xs animate-pulse">2. Python_Essentials_2 <FontAwesomeIcon icon={faLink} className="ml-1" /></p>
+        </a>
+      </li>
+      {/* Curso 3 */}
+      <li className="flex items-center py-2">
+        <img src="../py2.png" alt="Nombre del Curso 3" className="w-1/4 h-auto rounded-full mr-2" />
+        <a href="/link-del-curso-3">
+          <p className="card-text text-white text-xs animate-pulse">3. Javascript<FontAwesomeIcon icon={faLink} className="ml-1" /></p>
+        </a>
+      </li>
+    </ul>
   </div>
 );
 
-import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 
-const ResumeCard = () => (
-  <div className="bg-darkBg p-4 shadow-md rounded-lg mx-2 card-size my-4">
-    <div className="flex items-center justify-between mb-3">
-      <h2 className="text-xl font-semibold text-darkBg">Hoja de Vida</h2>
-      <FontAwesomeIcon icon={faFilePdf} className="text-darkBg text-2xl" />
-    </div>
-    <p className="text-darkBg">[Resumen de tu hoja de vida]</p>
-    <a
-      href="/ruta-a-tu-pdf"
-      className="bg-blue-500 text-white px-3 py-1 rounded inline-block mt-3 hover:bg-blue-600 text-sm"
-      download="hoja-de-vida.pdf"
-    >
-      Descargar PDF
-    </a>
-  </div>
-);
 
 const Carousel = () => (
   <div className="carousel-container">
-    <div className="carousel-scroll " >
+    <div className="carousel-scroll  relative" >
       <ProfileCard />
       <HobbyCard />
       <PublicationCard />
       <CourseCard />
-      <ResumeCard />
     </div>
   </div>
 );

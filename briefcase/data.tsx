@@ -1,25 +1,20 @@
-import { Github,FolderGit2, Brain,Mails, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech } from "lucide-react";
+import { UserRoundCog,Github,FolderGit2, Brain,Mails, HomeIcon, UserRound, Linkedin, Instagram, Crop, Pencil, Computer, Book, Rocket, Speech } from "lucide-react";
  
 export const socialNetworks = [
     {
         id: 1,
-        logo: <Youtube size={30} strokeWidth={1} />,
-        src: "#!",
+        logo: <Linkedin size={30} strokeWidth={1} />,
+        src: "https://ec.linkedin.com/in/jessica-titua%C3%B1a-b3582b272?original_referer=https%3A%2F%2Fwww.bing.com%2F",
     },
     {
         id: 2,
-        logo: <Linkedin size={30} strokeWidth={1} />,
-        src: "#!",
+        logo: <Instagram size={30} strokeWidth={1} />,
+        src: "https://www.instagram.com/jesin.n/",
     },
     {
         id: 3,
-        logo: <Twitter size={30} strokeWidth={1} />,
-        src: "#!",
-    },
-    {
-        id: 4,
         logo: <Github size={30} strokeWidth={1} />,
-        src: "#!",
+        src: "https://github.com/jess026p/",
     },
    
 ];
@@ -40,21 +35,27 @@ export const itemsNavbar = [
     },
     {
         id: 3,
+        title: "Experiencia",
+        icon: <UserRoundCog  color="#fff" strokeWidth={1} />,
+        link: "/experiencia",
+      },
+    {
+        id: 4,
         title: "Proyectos",
         icon: <FolderGit2 size={25} color="#fff" strokeWidth={1} />,
-        link: "/services",
-      },
-      {
-        id: 4,
-        title: "Habilidades",
-        icon: <Brain size={25} color="#fff" strokeWidth={1} />,
-        link: "/portfolio",
+        link: "/proyects",
       },
       {
         id: 5,
+        title: "Habilidades",
+        icon: <Brain size={25} color="#fff" strokeWidth={1} />,
+        link: "/skills",
+      },
+      {
+        id: 6,
         title: "Contacto",
         icon: <Mails size={25} color="#fff" strokeWidth={1} />,
-        link: "/testimonials",
+        link: "/Contact",
       },
     
 ];
