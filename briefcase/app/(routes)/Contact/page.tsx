@@ -14,6 +14,8 @@ const Page = () => {
         message: ''
     });
 
+    const [isSending, setIsSending] = useState(false);
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setForm({
@@ -24,6 +26,8 @@ const Page = () => {
 
     const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
+        setIsSending(true);
+
         try {
             const res = await fetch('/api/send', {
                 method: 'POST',
@@ -34,17 +38,30 @@ const Page = () => {
             });
             const data = await res.json();
             console.log(data);
-            alert(data.message);
+
+            if (data.message) {
+                alert(`${data.message} Da click en aceptar para continuar.`);
+                setForm({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    message: ''
+                });
+            } else {
+                alert('Error al enviar el mensaje');
+            }
         } catch (error) {
             console.error(error);
             alert('Error al enviar el mensaje');
+        } finally {
+            setIsSending(false);
         }
     };
 
     return (
         <>
             <TransitionPage />
-            <CoverParticles/>
+            <CoverParticles />
             <ContainerPage>
                 <div className="flex justify-center items-center h-full">
                     <div className="bg-secondary cardM shadow-md rounded-lg p-6 max-w-sm w-full">
@@ -113,8 +130,9 @@ const Page = () => {
                             <button
                                 onClick={handleSubmit}
                                 className="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-300"
+                                disabled={isSending}
                             >
-                                Enviar
+                                {isSending ? 'Enviando mensaje...' : 'Enviar'}
                             </button>
                         </form>
                     </div>
