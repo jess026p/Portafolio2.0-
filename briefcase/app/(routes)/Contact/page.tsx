@@ -1,5 +1,4 @@
-'use client'
-'use client'
+'use client';
 import TransitionPage from "@/components/transition-page";
 import ContainerPage from "@/components/container";
 import React, { useState } from 'react';
@@ -10,32 +9,44 @@ const Page = () => {
         name: '',
         email: '',
         phone: '',
-        message: ''
+        message: '',
     });
 
-    const handleChange = (e) => {
+    // Definir el tipo del evento en handleChange
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Aquí puedes agregar la lógica para enviar los datos del formulario
-        console.log(formData);
-        // Por ejemplo, puedes enviarlos a una API o hacer alguna otra acción
+    // Definir el tipo del evento en handleSubmit
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+        try {
+            const res = await fetch('/api/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+            const data = await res.json();
+            console.log(data);
+        } catch (error) {
+            console.error('Error al enviar el formulario:', error);
+        }
     };
 
     return (
         <>
             <TransitionPage />
             <ContainerPage>
-                <div className="flex justify-center items-center h-full" > {/* Aplica las clases flex, justify-center e items-center para centrar vertical y horizontalmente */}
-                <div className="bg-secondary max-w-md p-4 rounded-md">
+                <div className="flex justify-center items-center h-full"> {/* Aplica las clases flex, justify-center e items-center para centrar vertical y horizontalmente */}
+                    <div className="bg-secondary max-w-md p-4 rounded-md">
                         <h1 className="text-3xl font-bold mb-4">Formulario de Contacto</h1>
-                        <form  onSubmit={handleSubmit} className=" text-center">
+                        <form onSubmit={handleSubmit} className="text-center">
                             <div className="mb-4">
                                 <div className="flex items-center border border-secondary rounded-md focus:border-blue-500 focus:ring-blue-500">
                                     <FaUser className="inline-block text-gray-400 mx-2" /> {/* Icono de usuario */}
@@ -43,11 +54,11 @@ const Page = () => {
                                         type="text"
                                         id="name"
                                         name="name"
-                                        value={formData.name}
-                                        onChange={handleChange}
                                         required
                                         className="rounded-md w-full focus:outline-none"
                                         placeholder="Nombre"
+                                        value={formData.name}
+                                        onChange={handleChange}
                                     />
                                 </div>
                             </div>
@@ -58,11 +69,10 @@ const Page = () => {
                                         type="email"
                                         id="email"
                                         name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        required
                                         className="w-full rounded-md focus:outline-none"
                                         placeholder="Correo Electrónico"
+                                        value={formData.email}
+                                        onChange={handleChange}
                                     />
                                 </div>
                             </div>
@@ -73,11 +83,10 @@ const Page = () => {
                                         type="tel"
                                         id="phone"
                                         name="phone"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        required
                                         className="rounded-md w-full focus:outline-none"
                                         placeholder="Número de Teléfono"
+                                        value={formData.phone}
+                                        onChange={handleChange}
                                     />
                                 </div>
                             </div>
@@ -87,16 +96,18 @@ const Page = () => {
                                     <textarea
                                         id="message"
                                         name="message"
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        required
                                         className="w-full rounded-md focus:outline-none"
                                         placeholder="Mensaje"
                                         rows={5}
+                                        value={formData.message}
+                                        onChange={handleChange}
                                     ></textarea>
                                 </div>
                             </div>
-                            <button type="submit" className=" animate-pulse bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300">
+                            <button
+                                type="submit"
+                                className="animate-pulse bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300"
+                            >
                                 Enviar Mensaje
                             </button>
                         </form>
